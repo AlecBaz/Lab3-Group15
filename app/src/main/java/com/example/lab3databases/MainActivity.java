@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.net.PortUnreachableException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -74,7 +75,14 @@ public class MainActivity extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Delete product", Toast.LENGTH_SHORT).show();
+                String name = productName.getText().toString();
+                double price = Double.parseDouble(productPrice.getText().toString());
+                Product product = new Product(name, price);
+                dbHandler.deleteProduct(product);
+                productName.setText("");
+                productPrice.setText("");
+                viewProducts();
+                //Toast.makeText(MainActivity.this, "Delete product", Toast.LENGTH_SHORT).show();
             }
         });
 
