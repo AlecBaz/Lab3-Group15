@@ -76,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String name = productName.getText().toString();
-                double price = Double.parseDouble(productPrice.getText().toString());
-                Product product = new Product(name, price);
-                dbHandler.deleteProduct(product);
+//                double price = Double.parseDouble(productPrice.getText().toString());
+//                Product product = new Product(name, price);
+                dbHandler.deleteProduct(name);
                 productName.setText("");
                 productPrice.setText("");
                 viewProducts();
