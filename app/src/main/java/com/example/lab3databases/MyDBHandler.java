@@ -57,4 +57,75 @@ public class MyDBHandler extends SQLiteOpenHelper {
         db.delete(TABLE_NAME, COLUMN_PRODUCT_NAME+ "=?", new String[]{name});
         db.close();
     }
+
+    public Cursor findProduct(String productName, String productPrice) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        double price;
+        if (productPrice == null){
+            price = -1;
+        }else{
+            price = Double.valueOf(productPrice);
+        }
+        Cursor fail = null;
+        //Product[] fail = null;
+        if (productName != null && price != -1) {
+            String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_NAME + " LIKE " + productName;
+            Cursor cursor = db.rawQuery(query, null);
+            return cursor;
+
+//            Product[] productList = new Product[1];
+//            Product product = new Product();
+//            if (cursor.moveToFirst()) {
+//                product.setId(Integer.parseInt(cursor.getString(0)));
+//                product.setProductName(cursor.getString(1));
+//                product.setProductPrice(Double.parseDouble(cursor.getString(2)));
+//                cursor.close();
+//            } else {
+//                product = null;
+//            }
+//            productList[0] = product;
+//            db.close();
+            //return productList;
+        } else if (productName != null && price == -1) {
+            String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_PRICE + " LIKE " + productPrice;
+            Cursor cursor = db.rawQuery(query, null);
+            return cursor;
+
+//            int c = cursor.getCount();
+//            Product[] productList = new Product[c];
+//            cursor.moveToFirst();
+//            for (int i = 0; i < productList.length; i++) {
+//                Product product = new Product();
+//                product.setId(Integer.parseInt(cursor.getString(0)));
+//                product.setProductName(cursor.getString(1));
+//                product.setProductPrice(Double.parseDouble(cursor.getString(2)));
+//                productList[i] = product;
+//                cursor.moveToNext();
+//            }
+//            cursor.close();
+//            db.close();
+//            return productList;
+
+        } else if (productName == null && price != -1) {
+            String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_NAME + " LIKE " + productName + "%";
+            Cursor cursor = db.rawQuery(query, null);
+            return cursor;
+        }
+//            int c = cursor.getCount();
+//            Product[] productList = new Product[c];
+//            cursor.moveToFirst();
+//            for (int i = 0; i < productList.length; i++) {
+//                Product product = new Product();
+//                product.setId(Integer.parseInt(cursor.getString(0)));
+//                product.setProductName(cursor.getString(1));
+//                product.setProductPrice(Double.parseDouble(cursor.getString(2)));
+//                productList[i] = product;
+//                cursor.moveToNext();
+//            }
+//            cursor.close();
+//            db.close();
+//            return productList;
+
+        return fail;
+    }
 }

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/noah/School/Lab3-Group15/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+            "outputFile": "C:\\Users\\alecb\\OneDrive - University of Ottawa\\Documents\\uOttawa\\Software engineering\\Lab3-Group15\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
             "map": [
                 {
-                    "source": "/home/noah/.gradle/caches/transforms-3/ff2c4a784f2b5ca3dbaf6d740ef9d663/transformed/material-1.6.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+                    "source": "C:\\Users\\alecb\\.gradle\\caches\\transforms-3\\ff2c4a784f2b5ca3dbaf6d740ef9d663\\transformed\\material-1.6.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
