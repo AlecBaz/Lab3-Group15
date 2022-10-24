@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Nothing to show", Toast.LENGTH_SHORT).show();
         } else {
             while (cursor.moveToNext()) {
-                foundProductList.add(cursor.getString(1) + " (" +cursor.getString(2)+")");
+                foundProductList.add(cursor.getString(0) + " (" +cursor.getString(1)+")");
             }
         }
 
