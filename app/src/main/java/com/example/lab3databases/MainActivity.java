@@ -1,5 +1,5 @@
 package com.example.lab3databases;
-
+//:)
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
