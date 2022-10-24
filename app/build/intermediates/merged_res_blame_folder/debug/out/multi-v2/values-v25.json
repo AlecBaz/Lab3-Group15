@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/noah/School/Lab3-Group15/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v25/values-v25.xml",
+            "outputFile": "C:\\Users\\noahs\\School\\SEG2105\\Labs\\Lab3-Group15\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v25\\values-v25.xml",
             "map": [
                 {
-                    "source": "/home/noah/.gradle/caches/transforms-3/7ad767b51f6b98a76ea81086e524167b/transformed/appcompat-1.4.1/res/values-v25/values-v25.xml",
+                    "source": "C:\\Users\\noahs\\.gradle\\caches\\transforms-3\\7ad767b51f6b98a76ea81086e524167b\\transformed\\appcompat-1.4.1\\res\\values-v25\\values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

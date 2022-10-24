@@ -57,4 +57,18 @@ public class MyDBHandler extends SQLiteOpenHelper {
         db.delete(TABLE_NAME, COLUMN_PRODUCT_NAME+ "=?", new String[]{name});
         db.close();
     }
+
+    public Cursor findProduct(String productName, String productPrice) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        productName += "%";
+        if (!productName.isEmpty() && !productPrice.isEmpty()) {
+            Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_NAME,COLUMN_PRODUCT_PRICE}, COLUMN_PRODUCT_NAME + " LIKE " + "?"  + " AND " + COLUMN_PRODUCT_PRICE + "=?", new String[]{productName,productPrice}, null, null, null);
+            return cursor;
+        } else if (!productName.isEmpty()) {
+            Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_PRICE}, COLUMN_PRODUCT_NAME + " LIKE " + "?", new String[]{productName}, null, null, null);
+            return cursor;
+        }
+        Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_PRICE}, COLUMN_PRODUCT_PRICE+ "=?", new String[]{productPrice}, null, null, null);
+        return cursor;
+    }
 }

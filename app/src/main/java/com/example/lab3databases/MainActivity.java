@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ListView productListView;
 
     ArrayList<String> productList;
+    ArrayList foundProductList;
     ArrayAdapter adapter;
     MyDBHandler dbHandler;
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         productList = new ArrayList<>();
+        foundProductList = new ArrayList<>();
 
         // info layout
         productId = findViewById(R.id.productId);
@@ -69,8 +71,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Find product", Toast.LENGTH_SHORT).show();
+                String name = productName.getText().toString();
+                String price = productPrice.getText().toString();
+                Cursor cursor = dbHandler.findProduct(name, price);
+                viewFoundProducts(cursor);
+//                if (cursor.getCount() == 0) {
+//                    Toast.makeText(MainActivity.this, "Nothing to show", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    while (cursor.moveToNext()) {
+//                        Toast.makeText(MainActivity.this, cursor.getString(1) + " (" +cursor.getString(2)+")", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
             }
         });
+
 
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +116,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, productList);
+        productListView.setAdapter(adapter);
+    }
+
+    private void viewFoundProducts(Cursor cursor) {
+        foundProductList.clear();
+        if (cursor.getCount() == 0) {
+            Toast.makeText(MainActivity.this, "Nothing to show", Toast.LENGTH_SHORT).show();
+        } else {
+            while (cursor.moveToNext()) {
+                foundProductList.add(cursor.getString(0) + " (" +cursor.getString(1)+")");
+            }
+        }
+
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, foundProductList);
         productListView.setAdapter(adapter);
     }
 }

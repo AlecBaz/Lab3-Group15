@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/noah/School/Lab3-Group15/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-large-v4/values-large-v4.xml",
+            "outputFile": "C:\\Users\\noahs\\School\\SEG2105\\Labs\\Lab3-Group15\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
-                    "source": "/home/noah/.gradle/caches/transforms-3/ff2c4a784f2b5ca3dbaf6d740ef9d663/transformed/material-1.6.0/res/values-large-v4/values-large-v4.xml",
+                    "source": "C:\\Users\\noahs\\.gradle\\caches\\transforms-3\\ff2c4a784f2b5ca3dbaf6d740ef9d663\\transformed\\material-1.6.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,10",
                         "startColumns": "4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/noah/.gradle/caches/transforms-3/7ad767b51f6b98a76ea81086e524167b/transformed/appcompat-1.4.1/res/values-large-v4/values-large-v4.xml",
+                    "source": "C:\\Users\\noahs\\.gradle\\caches\\transforms-3\\7ad767b51f6b98a76ea81086e524167b\\transformed\\appcompat-1.4.1\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
