@@ -1,11 +1,11 @@
 com/example/lab3databases/Product.java
  com.example.lab3databases.Product
+com/example/lab3databases/BuildConfig.java
+ com.example.lab3databases.BuildConfig
+com/example/lab3databases/MyDBHandler.java
+ com.example.lab3databases.MyDBHandler
 com/example/lab3databases/MainActivity.java
  com.example.lab3databases.MainActivity
  com.example.lab3databases.MainActivity$1
  com.example.lab3databases.MainActivity$2
  com.example.lab3databases.MainActivity$3
-com/example/lab3databases/BuildConfig.java
- com.example.lab3databases.BuildConfig
-com/example/lab3databases/MyDBHandler.java
- com.example.lab3databases.MyDBHandler

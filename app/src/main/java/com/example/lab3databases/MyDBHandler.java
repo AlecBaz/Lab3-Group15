@@ -99,11 +99,10 @@ public class MyDBHandler extends SQLiteOpenHelper {
 //            db.close();
 //            return productList;
 
-        } else if (!productPrice.isEmpty()) {
-            String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_PRICE + " = " + productName;
-            Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_NAME}, COLUMN_PRODUCT_NAME + " =? ", new String[]{productName}, null, null, null);
-            return cursor;
         }
+        String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_PRICE + " = " + productName;
+        Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_NAME}, COLUMN_PRODUCT_NAME + " =? ", new String[]{productName}, null, null, null);
+        return cursor;
 //            int c = cursor.getCount();
 //            Product[] productList = new Product[c];
 //            cursor.moveToFirst();
@@ -118,6 +117,5 @@ public class MyDBHandler extends SQLiteOpenHelper {
 //            cursor.close();
 //            db.close();
 //            return productList;
-        return null;
     }
 }

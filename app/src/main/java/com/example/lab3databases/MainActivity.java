@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         productList = new ArrayList<>();
+        foundProductList = new ArrayList<>();
 
         // info layout
         productId = findViewById(R.id.productId);
