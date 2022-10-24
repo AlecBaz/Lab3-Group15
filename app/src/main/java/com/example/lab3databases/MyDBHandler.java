@@ -60,62 +60,15 @@ public class MyDBHandler extends SQLiteOpenHelper {
 
     public Cursor findProduct(String productName, String productPrice) {
         SQLiteDatabase db = this.getWritableDatabase();
+        productName += "%";
         if (!productName.isEmpty() && !productPrice.isEmpty()) {
-//            String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_NAME + " = " + productName + " AND " + COLUMN_PRODUCT_PRICE + " = " + productPrice;
-            Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_NAME,COLUMN_PRODUCT_PRICE}, COLUMN_PRODUCT_NAME + "=?"  + " AND " + COLUMN_PRODUCT_PRICE + "=?", new String[]{productName,productPrice}, null, null, null);
+            Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_NAME,COLUMN_PRODUCT_PRICE}, COLUMN_PRODUCT_NAME + " LIKE " + "?"  + " AND " + COLUMN_PRODUCT_PRICE + "=?", new String[]{productName,productPrice}, null, null, null);
             return cursor;
-
-//            Product[] productList = new Product[1];
-//            Product product = new Product();
-//            if (cursor.moveToFirst()) {
-//                product.setId(Integer.parseInt(cursor.getString(0)));
-//                product.setProductName(cursor.getString(1));
-//                product.setProductPrice(Double.parseDouble(cursor.getString(2)));
-//                cursor.close();
-//            } else {
-//                product = null;
-//            }
-//            productList[0] = product;
-//            db.close();
-            //return productList;
         } else if (!productName.isEmpty()) {
-            String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_NAME + " = " + productName;
-//            Cursor cursor = db.rawQuery(query, null);
-            Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_PRICE}, COLUMN_PRODUCT_NAME + "=?", new String[]{productName}, null, null, null);
+            Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_PRICE}, COLUMN_PRODUCT_NAME + " LIKE " + "?", new String[]{productName}, null, null, null);
             return cursor;
-
-//            int c = cursor.getCount();
-//            Product[] productList = new Product[c];
-//            cursor.moveToFirst();
-//            for (int i = 0; i < productList.length; i++) {
-//                Product product = new Product();
-//                product.setId(Integer.parseInt(cursor.getString(0)));
-//                product.setProductName(cursor.getString(1));
-//                product.setProductPrice(Double.parseDouble(cursor.getString(2)));
-//                productList[i] = product;
-//                cursor.moveToNext();
-//            }
-//            cursor.close();
-//            db.close();
-//            return productList;
-
         }
-        String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_PRICE + " = " + productName;
         Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_NAME, COLUMN_PRODUCT_PRICE}, COLUMN_PRODUCT_PRICE+ "=?", new String[]{productPrice}, null, null, null);
         return cursor;
-//            int c = cursor.getCount();
-//            Product[] productList = new Product[c];
-//            cursor.moveToFirst();
-//            for (int i = 0; i < productList.length; i++) {
-//                Product product = new Product();
-//                product.setId(Integer.parseInt(cursor.getString(0)));
-//                product.setProductName(cursor.getString(1));
-//                product.setProductPrice(Double.parseDouble(cursor.getString(2)));
-//                productList[i] = product;
-//                cursor.moveToNext();
-//            }
-//            cursor.close();
-//            db.close();
-//            return productList;
     }
 }
