@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\alecb\\OneDrive - University of Ottawa\\Documents\\uOttawa\\Software engineering\\Lab3-Group15\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
+            "outputFile": "C:\\Users\\noahs\\School\\SEG2105\\Labs\\Lab3-Group15\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\alecb\\.gradle\\caches\\transforms-3\\7ad767b51f6b98a76ea81086e524167b\\transformed\\appcompat-1.4.1\\res\\values-v22\\values-v22.xml",
+                    "source": "C:\\Users\\noahs\\.gradle\\caches\\transforms-3\\7ad767b51f6b98a76ea81086e524167b\\transformed\\appcompat-1.4.1\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

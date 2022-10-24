@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\alecb\\OneDrive - University of Ottawa\\Documents\\uOttawa\\Software engineering\\Lab3-Group15\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+            "outputFile": "C:\\Users\\noahs\\School\\SEG2105\\Labs\\Lab3-Group15\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldrtl-v17\\values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\alecb\\.gradle\\caches\\transforms-3\\ff2c4a784f2b5ca3dbaf6d740ef9d663\\transformed\\material-1.6.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "source": "C:\\Users\\noahs\\.gradle\\caches\\transforms-3\\ff2c4a784f2b5ca3dbaf6d740ef9d663\\transformed\\material-1.6.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

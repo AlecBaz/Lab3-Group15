@@ -60,17 +60,9 @@ public class MyDBHandler extends SQLiteOpenHelper {
 
     public Cursor findProduct(String productName, String productPrice) {
         SQLiteDatabase db = this.getWritableDatabase();
-        double price;
-        if (productPrice == null){
-            price = -1;
-        }else{
-            price = Double.valueOf(productPrice);
-        }
-        Cursor fail = null;
-        //Product[] fail = null;
-        if (productName != null && price != -1) {
-            String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_NAME + " LIKE " + productName;
-            Cursor cursor = db.rawQuery(query, null);
+        if (!productName.isEmpty() && !productPrice.isEmpty()) {
+//            String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_NAME + " = " + productName + " AND " + COLUMN_PRODUCT_PRICE + " = " + productPrice;
+            Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_NAME,COLUMN_PRODUCT_PRICE}, COLUMN_PRODUCT_NAME + " =? " + " AND " + COLUMN_PRODUCT_PRICE + " =? ", new String[]{productName,productPrice}, null, null, null);
             return cursor;
 
 //            Product[] productList = new Product[1];
@@ -86,9 +78,10 @@ public class MyDBHandler extends SQLiteOpenHelper {
 //            productList[0] = product;
 //            db.close();
             //return productList;
-        } else if (productName != null && price == -1) {
-            String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_PRICE + " LIKE " + productPrice;
-            Cursor cursor = db.rawQuery(query, null);
+        } else if (!productName.isEmpty()) {
+            String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_NAME + " = " + productName;
+//            Cursor cursor = db.rawQuery(query, null);
+            Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_PRICE}, COLUMN_PRODUCT_PRICE + " =? ", new String[]{productPrice}, null, null, null);
             return cursor;
 
 //            int c = cursor.getCount();
@@ -106,9 +99,9 @@ public class MyDBHandler extends SQLiteOpenHelper {
 //            db.close();
 //            return productList;
 
-        } else if (productName == null && price != -1) {
-            String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_NAME + " LIKE " + productName + "%";
-            Cursor cursor = db.rawQuery(query, null);
+        } else if (!productPrice.isEmpty()) {
+            String query = " SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_PRODUCT_PRICE + " = " + productName;
+            Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_PRODUCT_NAME}, COLUMN_PRODUCT_NAME + " =? ", new String[]{productName}, null, null, null);
             return cursor;
         }
 //            int c = cursor.getCount();
@@ -125,7 +118,6 @@ public class MyDBHandler extends SQLiteOpenHelper {
 //            cursor.close();
 //            db.close();
 //            return productList;
-
-        return fail;
+        return null;
     }
 }
